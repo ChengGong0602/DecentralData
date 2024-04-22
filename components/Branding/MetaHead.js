@@ -3,7 +3,7 @@ import { Head } from 'next/document';
 import theme from '~/theme/paletteDark';
 import brand from '~/public/text/brand';
 
-const MetaComponent = () => (
+const MetaHead = () => (
   <Head>
     {/* Use minimum-scale=1 to enable GPU rasterization */}
     <meta
@@ -64,4 +64,4 @@ const MetaComponent = () => (
   </Head>
 );
 
-export default MetaComponent;
+export default MetaHead;
