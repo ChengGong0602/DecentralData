@@ -3,7 +3,8 @@ import Document, { Html, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { getInitColorSchemeScript } from '@mui/material/styles';
 import createEmotionCache from '../theme/createEmotionCache';
-import MetaHead from '~/components/branding/MetaHead';
+import MetaHead from '../components/branding/MetaHead';
+
 import i18nextConfig from '../next-i18next.config';
 
 class MyDocument extends Document {
