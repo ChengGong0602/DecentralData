@@ -3,8 +3,7 @@ import Document, { Html, Main, NextScript } from 'next/document';
 import createEmotionServer from '@emotion/server/create-instance';
 import { getInitColorSchemeScript } from '@mui/material/styles';
 import createEmotionCache from '../theme/createEmotionCache';
-import MetaHead from '../components/branding/MetaHead';
-
+import MetaHead from '../components/Branding/MetaHead';
 import i18nextConfig from '../next-i18next.config';
 
 class MyDocument extends Document {
@@ -72,8 +71,8 @@ MyDocument.getInitialProps = async ctx => {
   const cache = createEmotionCache();
   const { extractCriticalToChunks } = createEmotionServer(cache);
 
-  ctx.renderPage = () =>
-    originalRenderPage({ enhanceApp: (App) => (function EnhanceApp(props) { // eslint-disable-line
+  ctx.renderPage = () => originalRenderPage({
+    enhanceApp: (App) => (function EnhanceApp(props) { // eslint-disable-line
       return <App emotionCache={cache} {...props} />;
     }),
   });
